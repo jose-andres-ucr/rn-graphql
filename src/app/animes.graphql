@@ -1,0 +1,21 @@
+query GetAnimes($page: Int, $perPage: Int, $search: String) {
+  Page(page: $page, perPage: $perPage) {
+    pageInfo {
+      total
+      currentPage
+      lastPage
+      hasNextPage
+      perPage
+    }
+    media(search: $search) {
+      id
+      meanScore
+      title {
+        romaji
+      }
+      coverImage {
+        medium
+      }
+    }
+  }
+}
